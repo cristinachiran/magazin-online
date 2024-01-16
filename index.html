@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="init()">
+  <nav class="navbar">
+    <h1>Imag</h1>
+    <a href="">Salutari</a>
+  </nav>
+  <section>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" name="title" />
+      <input type="text" name="description" />
+      <input type="submit" name="submit" />
+    </form>
+    <ul class="items-container"></ul>
+  </section>
+  <div class="btn-container">
+    <button onclick="loadMore()">Load More Products</button>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to Top</button>
+  </div>
+  <script src="/main.js"></script>
+</body>
+
+</html>
