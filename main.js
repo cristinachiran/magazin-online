@@ -49,3 +49,20 @@ async function loadMore() {
   render(result.products);
   console.log(lastId);
 }
+
+async function handleSubmit(event) {
+  event.preventDefault();
+  console.log(event);
+  const title = document.querySelector("input[name='title']");
+  const description = document.querySelector("input[name='description']");
+  const response = await fetch("https://dummyjson.com/products/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      title: title.value,
+      description: description.value,
+    }),
+  });
+  const result = await response.json();
+  render([result]);
+}
